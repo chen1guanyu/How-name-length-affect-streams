@@ -14,6 +14,16 @@
             color: white;
         }
 
+        h2 {
+            font-size: 30px;
+            margin-top: 40px;
+            margin-left: 300px;
+        }
+
+        h3{
+            font-size: 25px;
+        }
+
         .bar {
             fill: #1DB954;
             transition: transform 0.5s, fill 0.3s;
@@ -30,7 +40,7 @@
         }
 
         .label {
-            font-size: 10px;
+            font-size: 15px;
             text-anchor: middle;
             opacity: 0;
             transition: opacity 0.3s;
@@ -42,7 +52,8 @@
         }
 
         #sortButton {
-            margin-top: 20px;
+            margin-top: 40px;
+            margin-left: 100px;
             padding: 8px 16px;
             background-color: #1DB954;
             color: white;
@@ -91,13 +102,13 @@
 </head>
 <body>
     <div class="chart-container">
-        <p>Title Length vs Spotify Streams</p>
+        <h2>Title Length vs Spotify Streams</h2>
         <button id="sortButton">Sort by Streams (Descending)</button>
         <svg></svg>
     </div>
 
     <div class="info-container">
-        <h2>Song Details</h2>
+        <h3>Song Details</h3>
         <div id="details"></div>
     </div>
 
@@ -122,7 +133,8 @@
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
-                .attr("transform", `translate(${margin.left},${margin.top})`);
+                .attr("transform", `translate(${margin.left + 50},${margin.top})`);
+
 
             let x = d3.scaleBand().range([0, width]).padding(0.2);
             let y = d3.scaleLinear().range([height, 0]);
